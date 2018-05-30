@@ -1,15 +1,16 @@
 const express = require('express');
-const cors = require('cors');
 const path = require('path');
-const app = express();
+const cors = require('cors');
 
 //const indexRoutes = require('./routes/index');
 const tasksRoutes = require('./routes/tasks');
 
+const app = express();
+
 //settings
-app.set('views', path.join(__dirname, 'views'));
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'ejs');
+// app.set('views', path.join(__dirname, 'views'));
+// app.engine('html', require('ejs').renderFile);
+// app.set('view engine', 'ejs');
 
 app.set('port', process.env.PORT || 3000);
 
@@ -27,5 +28,5 @@ app.use(express.static(path.join(__dirname, 'dist')));
 
 //start server
 app.listen(app.get('port'), () => {
-    console.log('server on port', app.get('port'));
+    console.log('server on port 3000');
 });
